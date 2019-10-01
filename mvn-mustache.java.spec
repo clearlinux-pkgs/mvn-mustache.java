@@ -4,12 +4,17 @@
 #
 Name     : mvn-mustache.java
 Version  : 0.9.3
-Release  : 1
+Release  : 2
 URL      : https://github.com/spullara/mustache.java/archive/mustache.java-0.9.3.tar.gz
 Source0  : https://github.com/spullara/mustache.java/archive/mustache.java-0.9.3.tar.gz
-Source1  : https://repo.maven.apache.org/maven2/com/github/spullara/mustache/java/compiler/0.9.3/compiler-0.9.3.jar
-Source2  : https://repo.maven.apache.org/maven2/com/github/spullara/mustache/java/compiler/0.9.3/compiler-0.9.3.pom
-Source3  : https://repo.maven.apache.org/maven2/com/github/spullara/mustache/java/mustache.java/0.9.3/mustache.java-0.9.3.pom
+Source1  : https://github.com/spullara/mustache.java/archive/mustache.java-0.9.5.tar.gz
+Source2  : https://github.com/spullara/mustache.java/archive/mustache.java-0.9.5.tar.gz
+Source3  : https://repo.maven.apache.org/maven2/com/github/spullara/mustache/java/compiler/0.9.3/compiler-0.9.3.jar
+Source4  : https://repo.maven.apache.org/maven2/com/github/spullara/mustache/java/compiler/0.9.3/compiler-0.9.3.pom
+Source5  : https://repo.maven.apache.org/maven2/com/github/spullara/mustache/java/mustache.java/0.9.3/mustache.java-0.9.3.pom
+Source6  : https://repo1.maven.org/maven2/com/github/spullara/mustache/java/compiler/0.8.17/compiler-0.8.17.jar
+Source7  : https://repo1.maven.org/maven2/com/github/spullara/mustache/java/compiler/0.8.17/compiler-0.8.17.pom
+Source8  : https://repo1.maven.org/maven2/com/github/spullara/mustache/java/mustache.java/0.8.17/mustache.java-0.8.17.pom
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : Apache-2.0
@@ -47,13 +52,22 @@ license components for the mvn-mustache.java package.
 mkdir -p %{buildroot}/usr/share/package-licenses/mvn-mustache.java
 cp LICENSE %{buildroot}/usr/share/package-licenses/mvn-mustache.java/LICENSE
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/github/spullara/mustache/java/compiler/0.9.3
-cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/com/github/spullara/mustache/java/compiler/0.9.3/compiler-0.9.3.jar
+cp %{SOURCE3} %{buildroot}/usr/share/java/.m2/repository/com/github/spullara/mustache/java/compiler/0.9.3/compiler-0.9.3.jar
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/github/spullara/mustache/java/compiler/0.9.3
-cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/com/github/spullara/mustache/java/compiler/0.9.3/compiler-0.9.3.pom
+cp %{SOURCE4} %{buildroot}/usr/share/java/.m2/repository/com/github/spullara/mustache/java/compiler/0.9.3/compiler-0.9.3.pom
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/github/spullara/mustache/java/mustache.java/0.9.3
-cp %{SOURCE3} %{buildroot}/usr/share/java/.m2/repository/com/github/spullara/mustache/java/mustache.java/0.9.3/mustache.java-0.9.3.pom
+cp %{SOURCE5} %{buildroot}/usr/share/java/.m2/repository/com/github/spullara/mustache/java/mustache.java/0.9.3/mustache.java-0.9.3.pom
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/github/spullara/mustache/java/compiler/0.8.17
+cp %{SOURCE6} %{buildroot}/usr/share/java/.m2/repository/com/github/spullara/mustache/java/compiler/0.8.17/compiler-0.8.17.jar
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/github/spullara/mustache/java/compiler/0.8.17
+cp %{SOURCE7} %{buildroot}/usr/share/java/.m2/repository/com/github/spullara/mustache/java/compiler/0.8.17/compiler-0.8.17.pom
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/github/spullara/mustache/java/mustache.java/0.8.17
+cp %{SOURCE8} %{buildroot}/usr/share/java/.m2/repository/com/github/spullara/mustache/java/mustache.java/0.8.17/mustache.java-0.8.17.pom
 
 
 %files
@@ -61,8 +75,11 @@ cp %{SOURCE3} %{buildroot}/usr/share/java/.m2/repository/com/github/spullara/mus
 
 %files data
 %defattr(-,root,root,-)
+/usr/share/java/.m2/repository/com/github/spullara/mustache/java/compiler/0.8.17/compiler-0.8.17.jar
+/usr/share/java/.m2/repository/com/github/spullara/mustache/java/compiler/0.8.17/compiler-0.8.17.pom
 /usr/share/java/.m2/repository/com/github/spullara/mustache/java/compiler/0.9.3/compiler-0.9.3.jar
 /usr/share/java/.m2/repository/com/github/spullara/mustache/java/compiler/0.9.3/compiler-0.9.3.pom
+/usr/share/java/.m2/repository/com/github/spullara/mustache/java/mustache.java/0.8.17/mustache.java-0.8.17.pom
 /usr/share/java/.m2/repository/com/github/spullara/mustache/java/mustache.java/0.9.3/mustache.java-0.9.3.pom
 
 %files license
